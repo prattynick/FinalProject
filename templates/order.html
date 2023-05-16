@@ -1,0 +1,19 @@
+<html>
+        <head>
+		<link href="{{ url_for('static', filename='stylesheet.css') }}" rel="stylesheet" />
+                <title>Order Here</title>
+        </head>
+        <body>
+                <h1>Order Here</h1>
+                <form method="POST" action="{{ url_for('order') }}">
+                        <label for="ID">ID (comma seperated):</label>
+                        <input type="text" id="ID" name="ID" required><br><br>
+                        <label for="NAME">NAME:</label>
+                        <input type="text" id="NAME" name="NAME" required><br><br>
+                        <label for="PRICE">PRICE:</label>
+                        <input type="integer" id="PRICE" name="PRICE" required><br><br>
+                        <input type="submit" value="Submit">
+                </form>
+        </body>
+</html>
+

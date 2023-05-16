@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<link href="{{ url_for('static', filename='stylesheet.css') }}" rel="stylesheet" />
+		<title>Menu</title>
+	</head>
+	<body>
+		<h1>Los Pollos Hermanos Menu</h1>
+		<ul>
+			{% for item in items %}
+			<li>{{ item[0] }} - {{  item[1] }} - ${{ item[2] }}</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>

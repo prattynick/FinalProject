@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<link href="{{url_for('static', filename='stylesheet.css') }}" rel="stylesheet" />
+		<title>Los Pollos Hermanos</title>
+	</head>
+	<body>
+		<h1>Welcome to Los Pollos Hermanos</h1>
+		<p>Click the links below to go their respected pages</p>
+		<ul>
+			<li><a href="{{ url_for('menu') }}">Menu</a></li>
+			<li><a href="{{ url_for('order') }}">Order</a></li>
+			<li><a href="{{ url_for('orders') }}">Orders</a></li>
+		</ul>
+	</body>
+</html>
