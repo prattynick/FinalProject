@@ -23,9 +23,9 @@ def order():
 		NAME = request.form['NAME']
 		PRICE = request.form['PRICE']
 
-		conn = sqlite3.connect('orders.db')
+		conn = sqlite3.connect('orders2.db')
 		c = conn.cursor()
-		c.execute('''INSERT INTO orders (ID, NAME, PRICE) VALUES (?, ?, ?)''', (ID, NAME, PRICE))
+		c.execute('''INSERT INTO customerorders (ID, NAME, PRICE) VALUES (?, ?, ?)''', (ID, NAME, PRICE))
 		conn.commit()
 		return 'Order Successful'
 		conn.close()
@@ -35,12 +35,12 @@ def order():
 
 @app.route('/orders')
 def orders():
-	conn = sqlite3.connect('orders.db')
+	conn = sqlite3.connect('orders2.db')
 	c = conn.cursor()
-	c.execute('SELECT * FROM orders')
-	orders = c.fetchall()
+	c.execute('SELECT * FROM customerorders')
+	customerorders = c.fetchall()
 	conn.close()
-	return render_template('orders.html', orders=orders)
+	return render_template('orders.html', customerorders=customerorders)
 
 
 if __name__ == '__main__':
